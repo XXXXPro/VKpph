@@ -1,0 +1,19 @@
+{
+	"name" : "__MSG_extensionName__", 
+    "version" : "1.0.1", 
+    "manifest_version": 2,
+    "description" : "__MSG_extensionDescription__",
+    "default_locale": "en",
+    "permissions": ["https://api.vk.com/method/*"],
+    "icons": { 
+        "16": "icon16.png",
+        "32": "icon32.png",
+       "128": "icon128.png" },
+    "content_scripts": [
+        {
+          "matches": ["https://vk.com/*"],
+          "js": ["vkpph.js"],
+          "css": ["vkpph.css"]
+        }
+    ]
+}

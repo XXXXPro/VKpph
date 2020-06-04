@@ -1,0 +1,8 @@
+{
+	"extensionName": {
+		"message": "VK.com private profiles highlight"
+	},
+	"extensionDescription":{
+		"message": "This extension highlights avatars of private VK profiles with red border in group members list, comments, liked list and so on, so you to will not lost your time trying to view them."
+	}
+}
