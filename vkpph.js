@@ -1,3 +1,10 @@
+/* ================================
+*  VK Private profiles highlighter extension
+*  URL: https://github.com/XXXXPro/VKpph/
+*  Written by 4X_Pro <me@4xpro.ru>
+*  License: GPL 3.0
+*  ================================*/
+
 (function () { // anonymous self-calling function to avoid name collisions
 let checked = {}; // hash of already being checking or checked users, keys are screen_names values are statuses (0 - checking, 1 - open profile, 2 - private)
 let pending = []; // list of users to check
