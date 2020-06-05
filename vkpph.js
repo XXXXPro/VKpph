@@ -63,6 +63,8 @@ function process(param) {
     fill_users('.like_tt_owner');
     fill_users('a.friend_recomm_card');
     fill_users('.fans_fan_ph');
+    fill_users('.ChatSettingsMembersWidget__list .Entity a');
+    fill_users('.nim-peer--photo a.im_grid');
     do_request();
   }
 }
