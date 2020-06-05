@@ -3,6 +3,7 @@ This very simple extension for Chromium-based browser highlights avatars of priv
 
 ## Installation
 If you use Opera, install extension from Opera Addons Store: https://addons.opera.com/ru/extensions/details/vkcom-private-profiles-highlight/
+
 For Chromium or other browser, just download or clone this repository, goto Extensions page, enable development mode and choose "Load unpacked extension" from directory where you have extracted it. Then go to vk.com and enjoy!
 
 # Расширение для выделения закрытых профилей VK.com
@@ -10,5 +11,6 @@ For Chromium or other browser, just download or clone this repository, goto Exte
 
 ## Установка
 В Opera можно установить, перейдя по следующей ссылке: https://addons.opera.com/ru/extensions/details/vkcom-private-profiles-highlight/
+
 В других броузерах установка предельно проста: загрузите или скопируйте содержимого этого репозитория, зайти в раздел «Расширения» в броузере, включите режим разработчика (developer mode) и укажите «Загрузить распакованное расширение» из каталога, в который вы его загрузили. После этого остается только зайти ВКонтакте, найти пользователя с закрытым профилем и посмотреть результат!
 
