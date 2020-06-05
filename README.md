@@ -1,6 +1,6 @@
 # VK.com private profiles highlighter
 
-This very simple extension for Chromium-based browser highlights avatars of private VK profiles with red border in group members list, wall posts, comments, lists of likes and so on. When
+This very simple extension for Chromium-based browser highlights avatars of private VK profiles with red border in group members list, wall posts, comments, lists of likes and so on. When you see the profile is private, you will not lose your time trying to go to view it.
 
 ## Installation
 Just download or clone this repository, goto Extension, enable development mode and choose "Load unpacked extension" from directory where you have extracted it. Then go to vk.com and enjoy!
