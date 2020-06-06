@@ -4,7 +4,7 @@ const api_url = "https://api.vk.com/method/users.get?fields=screen_name&name_cas
 chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
     const full_api_url = api_url + request.join(","); // building URL to call
-    fetch(full_api_url).then(function(response) { // using fetch to get data
+    fetch(full_api_url,{credentials:'omit'}).then(function(response) { // using fetch to get data
       if (response.ok && response.status == 200) { // if data received, converting it to JSON
         response.json().then(sendResponse);
       }
