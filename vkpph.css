@@ -1,2 +1,2 @@
-.vkpph_private img { border: 2px solid red; box-sizing: border-box }
-.vkpph_private.friend_recomm_card { border: 2px solid red; box-sizing: border-box }
+#page_wrap .vkpph_private img, #box_layer_wrap .vkpph_private img, #wk_layer_wrap .vkpph_private img { border: 2px solid red; box-sizing: border-box }
+#page_wrap .vkpph_private.friend_recomm_card { border: 2px solid red; box-sizing: border-box }

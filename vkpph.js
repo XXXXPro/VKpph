@@ -66,6 +66,8 @@ function process(param) {
     fill_users('.bp_thumb');
     fill_users('.ChatSettingsMembersWidget__list .Entity a');
     fill_users('.nim-peer--photo a.im_grid');
+    fill_users('.people_row .img a');
+    fill_users('.fans_fanph_wrap a');
     do_request();
   }
 }
