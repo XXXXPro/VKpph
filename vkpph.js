@@ -24,15 +24,17 @@ function fill_users(slct) { // finds all links to users by given CSS selector an
 function make_req_func(users,last) { // simple closure to make functions to call with setTimeout
   return function() {
     chrome.runtime.sendMessage(users,function (data) {
+      console.log(data.response);
       for (let i=0; i<data.response.length; i++) {
         checked[data.response[i].screen_name]=data.response[i].is_closed ? 2 : 1; // 2 for private profiles, 1 for open profile
+        checked["id"+data.response[i].id]=data.response[i].is_closed ? 2 : 1;
      }
      if (last) mark_users(); // if it is last call, then calling function to add class to private user links      
     })
   }
 }
 function do_request() {
-  const per_page=100;
+  const per_page=10;
   const timer_step=334;
   let timer = 0
   for (let start=0; start<pending.length;) { // splitting all pending user to 100 per block and making 3 request per second due to vk.com limitations
@@ -45,6 +47,7 @@ function do_request() {
 function mark_users() {
    for (user in checked) {
      if (checked[user]==2) { // only for private user
+       console.log("Marking user "+user+"as private");
        let elms=document.querySelectorAll('a[href="/'+user+'"]'); // finding all user links
        for (let i=0; i<elms.length; i++) { 
            elms[i].classList.add("vkpph_private");  // and adding class vkpph_private
@@ -52,11 +55,13 @@ function mark_users() {
      }
    }
    pending=[];   
+   // console.log(checked);
 }
 function process(param) {
   if (param==null ||  (param[0].target.className!='im-page--title-status _im_page_status' && param[0].target.className!='im-page--title-meta _im_page_peer_online')) {
     fill_users('.people_cell_ava');
     fill_users('.post_image');
+    fill_users('._post_image');
     fill_users('.friends_photo');
     fill_users('.right_list_photo');
     fill_users('.reply_image');
@@ -68,6 +73,7 @@ function process(param) {
     fill_users('.nim-peer--photo a.im_grid');
     fill_users('.people_row .img a');
     fill_users('.fans_fanph_wrap a');
+    fill_users('a.vkuiHorizontalCell__body.vkuiTappable.vkuiTappable--sizeX-regular.vkuiTappable--hasHover.vkuiTappable--hasActive.vkuiTappable--mouse');
     do_request();
   }
 }
@@ -75,8 +81,10 @@ function clear_cache() {
     checked={}
 }
 
+setTimeout(function() {
 process(null); // starting for the first time
 let observer = new MutationObserver(process); // and starting to observe, if new elements arrive to restart process function and update highlights
 observer.observe(document.body,{attributes: false, childList: true, characterData: false, subtree:true});
+}, 400);
 setInterval(clear_cache,2*24*60*60*1000); // clear checked users cache each 2 days for those, who never turns off computer
 })();
